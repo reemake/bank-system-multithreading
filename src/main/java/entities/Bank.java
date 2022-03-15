@@ -8,6 +8,12 @@ import java.util.List;
 import java.util.Queue;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
+/**
+ * Class which is describing Bank entity
+ * @see BankWorker
+ * @see Client
+ * @see Cashbox
+ */
 public class Bank {
 
     final static int SERVICE_TIME = 10;
@@ -18,6 +24,7 @@ public class Bank {
     private Cashbox cashbox;
     private Queue<Client> clients;
 
+    /** Constructor with parameters */
     public Bank(int clientsPerMinute, int workersCount, long cashboxCapacity) {
         this.clientsPerMinute = clientsPerMinute;
         this.workers = new Thread[workersCount];
@@ -29,6 +36,7 @@ public class Bank {
         }
     }
 
+    /** Method that starts the bank workflow */
     public void startWorking() throws InterruptedException {
         synchronized (this.clients) {
             int counter = 0;

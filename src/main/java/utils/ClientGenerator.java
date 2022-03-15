@@ -1,11 +1,14 @@
 package utils;
 
-import entities.Client;
-import entities.EClientOperation;
+import entities.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Class which is generates the list of Clients
+ * @see Client
+ */
 public class ClientGenerator {
 
     static final long MIN_OPERATION_VALUE = 100L;
@@ -13,6 +16,10 @@ public class ClientGenerator {
     static final long MIN_OPERATION_DURATION = 1000L;
     static final long MAX_OPERATION_DURATION = 10000L;
 
+    /**
+     * @param n number of clients
+     * @return generated list of clients
+     */
     public static List<Client> generateClients(int n) {
         List<Client> result = new ArrayList<>();
         for (int i = 0; i < n; i++) {
